@@ -55,6 +55,12 @@ class Transformer(object):
             else:
                 self.target_height = self.engine.get_proportional_height(self.context.request.width)
 
+            if self.context.config.DO_NOT_SCALE_UP:
+                if self.target_width > source_width:
+                    self.target_width = source_width
+                if self.target_height > source_height:
+                    self.target_height = source_height
+
     def get_target_dimensions(self):
         """
         Returns the target dimensions and calculates them if necessary.

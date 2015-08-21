@@ -65,7 +65,9 @@ Config.define(
     'IGNORE_SMART_ERRORS', False,
     'Ignore errors during smart detections and return image as a temp image (not saved in result storage and with '
     'MAX_AGE_TEMP_IMAGE age)', 'Imaging')
-
+Config.define(
+    'DO_NOT_SCALE_UP', False,
+    'Thumbor should not scale images up in size, but just return the original size if a higher size is requested', 'Imaging')
 Config.define(
     'SEND_IF_MODIFIED_LAST_MODIFIED_HEADERS', False,
     'Sends If-Modified-Since & Last-Modified headers; requires support from result storage', 'Imaging')
